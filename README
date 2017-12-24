@@ -8,3 +8,8 @@ zhihu.py 加入了一个deep变量 用来设置纵向爬取深度
 
 scrapy大法好啊啊啊啊啊啊
 接下来利用scrapy配合redis数据库来改写一个分布式
+
+
+
+更新：
+   另一分支：newbranch
