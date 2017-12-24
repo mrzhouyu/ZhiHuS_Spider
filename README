@@ -1,10 +1,32 @@
-利用scrapy框架爬取得知乎用户的信息
-涉及到Mongodb使用
 
-zhihu.py 加入了一个deep变量 用来设置纵向爬取深度
-是不是应该加个offset变量 来控制横向爬取的宽度哇
+远程slave主机：
+pip3 install scrapyd  用来被本地slave远程部署
+更改配置
+/usr/local/lib/python3.5/dist-packages/scrapy/default_scrapyd.conf
 
-乱敲乱敲
+vim default_scrapyd.conf
+取消127.0.0.1为0.0.0.0（可以自定义设置访问白名单）
+运行：scrapyd启动服务器
+ATT:所有远程slave需要安装：pip3 install scrapyd-redis包 用来与远程master主机连接 管理任务
 
-scrapy大法好啊啊啊啊啊啊
-接下来利用scrapy配合redis数据库来改写一个分布式
+
+本地slave从机：
+本地从机需要部署代码到远程从机
+环境：
+pip install scrapyd-client /pip3 install scrapyd-redis
+如果是window下部署，需要在python的scripts文件夹下 创建scrayd-deploy.bat 文件写入@echo off
+"C:\Users\user\Anaconda3\python.exe" "C:\Users\user\Anaconda3\Scripts\scrapyd-deploy" %1 %2 %3 %4 %5 %6 %7 %8 %9
+才能运行 scrapyd-deploy 部署到远程slave从机
+
+远程master主机：
+不运行程序，必须安装redis数据库，用来保存request指纹和请求队列，也可以用来存储数据（启用中间件）
+
+
+
+
+
+连接master主机：
+   settings.py    row:97~~
+部署到远程slave：
+   scrapy.cfg     row:10~~
+   
