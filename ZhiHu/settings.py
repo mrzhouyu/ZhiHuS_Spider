@@ -70,6 +70,8 @@ DEFAULT_REQUEST_HEADERS = {
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'ZhiHu.pipelines.MongoPipeline': 300,
+    'scrapy_redis.pipelines.RedisPipeline': 301
+
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -92,3 +94,12 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+'''
+下面是利用scrapy-redis来部署的一些步骤
+'''
+#更改调度器为scrapy-redis的调度器
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+#去重
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+#定义远程队列数据库连接信息
+REDIS_URL = 'redis://root:915603@120.78.154.37:6379'
