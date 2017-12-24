@@ -1,0 +1,14 @@
+README
+setup.py
+ZhiHu/__init__.py
+ZhiHu/items.py
+ZhiHu/middlewares.py
+ZhiHu/pipelines.py
+ZhiHu/settings.py
+ZhiHu/spiders/__init__.py
+ZhiHu/spiders/zhihu.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt

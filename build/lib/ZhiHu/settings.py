@@ -102,4 +102,4 @@ SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 #去重
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 #定义远程队列数据库连接信息
-REDIS_URL = 'redis://root:password@host:6379'
+REDIS_URL = 'redis://root:915603@120.78.154.37:6379'
